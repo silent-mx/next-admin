@@ -1,4 +1,4 @@
-import { NextUiProviders } from "@/utils/providers";
+import { NextUiProvider } from "@/components/provider";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
@@ -17,13 +17,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="zh-Hans" className="dark">
+    <html lang="zh-Hans">
       <head>
         <meta name="company-name" content="中国电信股份有限公司昭通分公司"></meta>
-        <meta name="address" content="云南省昭通市昭阳区公园路88号"></meta>
+        <meta name="company-address" content="云南省昭通市昭阳区公园路88号"></meta>
       </head>
       <body className={inter.className}>
-        <NextUiProviders>{children}</NextUiProviders>
+        <NextUiProvider>{children}</NextUiProvider>
       </body>
     </html>
   );
