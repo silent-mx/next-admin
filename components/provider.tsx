@@ -8,6 +8,7 @@ import { useRouter } from "next/navigation";
  */
 export function NextUiProvider({ children }: { children: React.ReactNode }) {
   const router = useRouter();
+
   return (
     <NextUIProvider navigate={router.push} locale="zh-Hans">
       {children}

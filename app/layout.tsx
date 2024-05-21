@@ -1,9 +1,7 @@
 import { NextUiProvider } from "@/components/provider";
+import { geistMono, geistSans } from "@/utils/font";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
-
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "next-admin",
@@ -22,7 +20,7 @@ export default function RootLayout({
         <meta name="company-name" content="中国电信股份有限公司昭通分公司"></meta>
         <meta name="company-address" content="云南省昭通市昭阳区公园路88号"></meta>
       </head>
-      <body className={inter.className}>
+      <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <NextUiProvider>{children}</NextUiProvider>
       </body>
     </html>
