@@ -1,3 +1,6 @@
-export default function Page() {
-  return <main>Home Page</main>;
+import { auth } from "@/auth";
+
+export default async function Page() {
+  const session = await auth();
+  return <main>Home Page {JSON.stringify(session)}</main>;
 }

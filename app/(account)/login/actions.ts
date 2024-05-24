@@ -3,7 +3,7 @@
 import { signIn } from "@/auth";
 import { AuthError } from "next-auth";
 
-export const login = async (data: any) => {
+export const authenticate = async (data: Record<string, any>) => {
   try {
     await signIn("credentials", data);
   } catch (error) {

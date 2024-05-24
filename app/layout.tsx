@@ -1,7 +1,8 @@
 import { NextUiProvider } from "@/components/provider";
-import { geistMono, geistSans } from "@/utils/font";
+import { inter } from "@/lib/fonts";
+import { cn } from "@/lib/utils";
+import "@/styles/globals.css";
 import type { Metadata } from "next";
-import "./globals.css";
 
 export const metadata: Metadata = {
   title: "next-admin",
@@ -15,12 +16,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="zh-Hans">
+    <html lang="zh-Hans" suppressHydrationWarning>
       <head>
         <meta name="company-name" content="中国电信股份有限公司昭通分公司"></meta>
         <meta name="company-address" content="云南省昭通市昭阳区公园路88号"></meta>
       </head>
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body className={cn(inter.className)}>
         <NextUiProvider>{children}</NextUiProvider>
       </body>
     </html>
